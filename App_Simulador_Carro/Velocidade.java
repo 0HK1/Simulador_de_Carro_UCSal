@@ -2,26 +2,29 @@ package simuladorcorrida;
 
 import java.util.Random;
 
-public class Veiculo {
-	private int velocidade;
+class Veiculo {
+    private int velocidade;
     private int distancia;
     
     public Veiculo() {
-        this.velocidade = 0;
-        this.distancia = 0;
+        reiniciar();
+    }
 
+    public void reiniciar() {
+	this.velocidade = 0;
+	this.distancia = 0;
     }
-    
-    public int getDistancia() {
-    	return distancia;
-    }
-    
-    public void simularPasso() {
+
+    public int simularVelocidade() {
         Random rand = new Random();
-        this.velocidade = rand.nextInt(3) + 1;
+        return rand.nextInt(3) + 1;
+    }
+
+    public void simularPasso() {
+        this.velocidade = simularVelocidade();
         this.distancia += this.velocidade;
     }
-    
+
     public String representar() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < distancia; i++) {
@@ -30,5 +33,8 @@ public class Veiculo {
         sb.append("V");
         return sb.toString();
     }
-}
 
+    public boolean alcancaDistanciaMaxima(int distanciaMaxima) {
+        return this.distancia >= distanciaMaxima;
+    }
+}
