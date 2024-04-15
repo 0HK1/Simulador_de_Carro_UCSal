@@ -10,9 +10,11 @@ public class SimuladorCorrida {
 		while(!veiculo1.alcancaDistanciaMaxima(DISTANCIA_MAXIMA) && !veiculo2.alcancaDistanciaMaxima(DISTANCIA_MAXIMA)) {
 			veiculo1.simularPasso();
 			veiculo2.simularPasso();
-			
+
+			System.out.println("//////////////////////////////////////////////////////////////////////");
 			System.out.println("Veículo 1: " + veiculo1.representar());
 			System.out.println("Veículo 2: " + veiculo2.representar());
+			System.out.println("//////////////////////////////////////////////////////////////////////");
 			System.out.println();
 		}
 		

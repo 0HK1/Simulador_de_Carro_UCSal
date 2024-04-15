@@ -28,7 +28,7 @@ class Veiculo {
     public String representar() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < distancia; i++) {
-            sb.append(" ");
+            sb.append("-");
         }
         sb.append("V");
         return sb.toString();
